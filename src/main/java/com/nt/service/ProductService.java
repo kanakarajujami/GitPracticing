@@ -48,4 +48,8 @@ public class ProductService {
         return productRepository.findProductByName(name);
     }
 
+    public List<Product> getProductsByPriceRange(Double start, Double end) {
+        return productRepository.fetchAllProductsByPriceRange(start, end);
+    }
+
 }
