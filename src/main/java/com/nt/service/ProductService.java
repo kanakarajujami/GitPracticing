@@ -24,6 +24,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+
     public Product updateProduct(Long id, Product productDetails) {
         return productRepository.findById(id)
             .map(product -> {
@@ -41,4 +42,10 @@ public class ProductService {
                 return true;
             }).orElse(false);
     }
+
+
+    public Optional<Product> getProductByName(String name) {
+        return productRepository.findProductByName(name);
+    }
+
 }
