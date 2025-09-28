@@ -18,6 +18,8 @@ public class Product {
     private String description;
     private String status;
     private LocalDate createdDate;
+    private String category;
+    private LocalDate updatedDate;
 
     public LocalDate getCreatedDate() {
         return createdDate;
@@ -33,6 +35,22 @@ public class Product {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public LocalDate getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(LocalDate updatedDate) {
+        this.updatedDate = updatedDate;
     }
 
     // Getters and setters
