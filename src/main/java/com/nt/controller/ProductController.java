@@ -80,4 +80,18 @@ public class ProductController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @Operation(summary = "Search products by description", description = "Returns products whose description contains the given keyword")
+    @ApiResponse(responseCode = "200", description = "List of matching products returned successfully")
+    @GetMapping("/search")
+    public List<Product> searchProductsByDescription(@RequestParam("desc") String keyword) {
+        return productService.searchProductsByDescription(keyword);
+    }
+
+    @Operation(summary = "Count products by price range", description = "Returns the count of products within the given price range")
+    @ApiResponse(responseCode = "200", description = "Count returned successfully")
+    @GetMapping("/count")
+    public long countProductsByPriceRange(@RequestParam("start") Double start, @RequestParam("end") Double end) {
+        return productService.countProductsByPriceRange(start, end);
+    }
 }

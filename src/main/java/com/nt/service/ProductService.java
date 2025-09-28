@@ -52,4 +52,12 @@ public class ProductService {
         return productRepository.fetchAllProductsByPriceRange(start, end);
     }
 
+    public List<Product> searchProductsByDescription(String keyword) {
+        return productRepository.findByDescriptionContaining(keyword);
+    }
+
+    public long countProductsByPriceRange(Double start, Double end) {
+        return productRepository.countByPriceBetween(start, end);
+    }
+
 }

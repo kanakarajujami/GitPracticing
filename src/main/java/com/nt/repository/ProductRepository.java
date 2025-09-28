@@ -13,4 +13,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     public Optional<Product> findProductByName(String name);
 
     public List<Product>  fetchAllProductsByPriceRange(Double start,Double end);
+
+    // New methods
+    List<Product> findByDescriptionContaining(String keyword);
+    long countByPriceBetween(Double start, Double end);
 }
